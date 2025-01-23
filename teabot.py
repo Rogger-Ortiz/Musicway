@@ -5,7 +5,7 @@ import nest_asyncio
 import asyncio
 
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix='$', intents=intents)
+bot = commands.Bot(command_prefix='*', intents=intents)
 
 # Removes help command so we can use our own
 bot.remove_command('help')
@@ -14,6 +14,7 @@ bot.remove_command('help')
 cogs = [
     'cogs.help',
     'cogs.youtube',
+    'cogs.chatbot',
     #'cogs.test'
 ]
 
@@ -31,4 +32,4 @@ async def on_ready():
     profile = bot.get_cog("Profile")
 
 # Starts the bot
-bot.run(os.getenv("MSW_key"))
+bot.run(os.getenv("TEA_key"))
